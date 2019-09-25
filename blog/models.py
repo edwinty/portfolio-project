@@ -1,8 +1,8 @@
 from django.db import models
 
 # Create your models here.
-class BlogConfig(models.Model):
-    title = models.CharField()
+class Article(models.Model):
+    title = models.CharField(max_length=255)
     pub_date = models.DateTimeField()
     body = models.TextField()
-    image = models.ImageField(upload_to='images/blog/')
+    image = models.ImageField(upload_to='images/blog/') 
