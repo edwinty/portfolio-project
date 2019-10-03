@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Maven Profile</title>
+    <title>{{blog.title}}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -49,49 +49,35 @@
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link" href="#">Profile</a>
                     <a class="nav-item nav-link" href="#">Projects</a>
-                    <a class="nav-item nav-link active" href="{% url 'home' %}">Portfolio</a>
-                    <a class="nav-item nav-link" href="{% url 'allblogs' %}" tabindex="-1" aria-disabled="true">Blog</a>
+                    <a class="nav-item nav-link" href="{% url 'home' %}">Portfolio</a>
+                    <a class="nav-item nav-link active" href="{% url 'allblogs' %}" tabindex="-1"
+                        aria-disabled="true">Blog</a>
                 </div>
             </div>
         </nav>
     </header>
 
+
     <main role="main">
+        <div class="container">
+            <h2 class="text-center pt-5"> {{ blog.title }}</h2><br><br>
+            <img src="{{ blog.image.url }}" class="card-img-top img-fluid" height='200' alt="...">
+            <h3 class="text-right">{{ blog.pub_date_short }}</h3>
+            <hr>
+            <div class="row">
 
-        <section class="jumbotron text-center">
-            <div class="container">
-                <img style="width: 100%;" src="{% static '#Content has always been the king in the digital era, everyone knows that. #Localization is the way of managing your troops effectively..png'%}"/>
-                <h1 class="jumbotron-heading">Hi! I'm Edwin</h1>
-                <p class="lead text-muted">I am a technical writer working in an online publication but frequently
-                    ghostwrite for other entrepreneurs as well. I enjoy hiking and camping to get my writing
-                    inspiration.</p>
-                <p>
-                    <a href="mailto:et@edwinty.com" class="btn btn-primary my-2">Work with me</a>
-                    <a href="#workanchor" class="btn btn-secondary my-2">Check my work</a>
-                </p>
-                <!-- <p Class='text-muted text-right'>Last update: {%now "Y/M" %}</p> -->
-            </div>
-        </section>
+                <div class="">
+                    <div class="">
+                        <div class="card-body">
+                            <p class="card-text">{{ blog.body }}</p>
 
-        <div class="album py-5 bg-light portfolioclass">
-            <div class="container">
-            <a name="workanchor"></a>
-                <div class="row">
-                    {% for job in jobs.all %}
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="{{ job.image.url }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">{{ job.summary }}</p>
-
-                            </div>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
-            </div>
-        </div>
 
+            </div>
+            <hr>
+        </div>
     </main>
 
     <footer class="text-muted">
@@ -99,14 +85,6 @@
             <p> Copyright© Maven Access Limited {% now "Y" %} ✌️</p>
         </div>
     </footer>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-        crossorigin="anonymous"></script> -->
-    <!-- skip line -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
